@@ -487,140 +487,160 @@
 </div>
         </div>
 
+
+<header class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title">Discover a World of Luxurious Jewelry</h1>
+    <p class="hero-subtitle">Exquisite craftsmanship meets timeless elegance in every piece</p>
+    <a href="/shop" class="hero-button">
+      <span class="button-text">Explore Collection</span>
+    </a>
+  </div>
+</header>
+
+<style>
+.hero-section {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+    url('b1.jpg') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: #000;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.7s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.hero-button:hover::before {
+  left: 100%;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 1rem;
+  }
+  
+  .hero-button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      <!-- Hero Slider -->
-<div data-delay="4000" data-animation="fade" class="hero-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="1000" data-infinite="true">
-    <div class="w-slider-mask">
-        
-        <!-- Slide 1 -->
-        <div data-w-id="46b245fe-3671-29d8-362d-41cdeca9b6e8" class="hero-slides w-slide">
-            <div class="hero-slide-wrapper">
-                <div class="container">
-                    <div class="hero-contents">
-                        <div class="mask">
-                            <h1 class="white-text">Icebyflexy a World of Luxurious Jewelry</h1>
-                        </div>
-                        <div class="hero-margin">
-                            <div class="hero-paragraph-mask">
-                                <p class="text-secondary">Our journey began with a vision to create a space where high value individuals could discover statement pieces that resonate with their personal style.</p>
-                            </div>
-                        </div>
-                        <div class="mask">
-                            <a data-w-id="38946bc3-59ce-2312-103a-aa6668b7fbab" href="/shop" class="primary-button white-btn w-inline-block">
-                                <div class="button-text-wrapper">
-                                    <div class="default-text">Explore Collection</div>
-                                    <div class="hover-text">Explore Collection</div>
-                                </div>
-                                <div class="button-hover-circle white"></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="absolute-image-hero">
-                   <img src="b1.jpg" loading="lazy" alt="Exquisite jewelry craftsmanship" sizes="100vw" srcset="
-b1.jpg 500w,
-b1.jpg 800w,
-b1.jpg 1080w,
-b1.jpg 1600w,
-b1.jpg 2000w
-                    " class="full-image"/>
-                    <div class="black-overlay-20"></div>
-                </div>
-                <div class="hero-slide-animation">
-                    <div class="bg-column-mask"><div class="bg-color-column"></div></div>
-                    <div class="bg-column-mask"><div class="bg-color-column"></div></div>
-                    <div class="bg-column-mask"><div class="bg-color-column"></div></div>
-                    <div class="bg-column-mask"><div class="bg-color-column"></div></div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Slide 2 -->
-        <div data-w-id="c84786b2-4b96-1de8-93d3-2079cb3a2709" class="hero-slides w-slide">
-            <div class="hero-slide-wrapper">
-                <div class="container">
-                    <div class="hero-contents">
-                        <div class="mask">
-                            <h1 class="white-text">Timeless Classics & Contemporary Designs</h1>
-                        </div>
-                        <div class="hero-margin">
-                            <div class="hero-paragraph-mask">
-                                <p class="text-secondary">We understand that every piece of jewelry tells a story, and we strive to curate a collection that embodies both timeless classics and contemporary designs.</p>
-                            </div>
-                        </div>
-                        <div class="mask">
-                            <a data-w-id="38946bc3-59ce-2312-103a-aa6668b7fbab" href="/shop" class="primary-button white-btn w-inline-block">
-                                <div class="button-text-wrapper">
-                                    <div class="default-text">View Collections</div>
-                                    <div class="hover-text">View Collections</div>
-                                </div>
-                                <div class="button-hover-circle white"></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="absolute-image-hero">
-                    <img src="https://www.cartier.com/on/demandware.static/-/Library-Sites-CartierSharedLibrary-BGTJ/default/dw845e3809/clp/2025/women-selection/01_HEADER_SFCC_NEL_CROSS_CAT_WOMAN_1920x800.jpg" loading="lazy" alt="Elegant gold jewelry collection" sizes="100vw" srcset="
-https://www.cartier.com/on/demandware.static/-/Library-Sites-CartierSharedLibrary-BGTJ/default/dw845e3809/clp/2025/women-selection/01_HEADER_SFCC_NEL_CROSS_CAT_WOMAN_1920x800.jpg 500w,
-https://www.cartier.com/on/demandware.static/-/Library-Sites-CartierSharedLibrary-BGTJ/default/dw845e3809/clp/2025/women-selection/01_HEADER_SFCC_NEL_CROSS_CAT_WOMAN_1920x800.jpg 800w,
-https://www.cartier.com/on/demandware.static/-/Library-Sites-CartierSharedLibrary-BGTJ/default/dw845e3809/clp/2025/women-selection/01_HEADER_SFCC_NEL_CROSS_CAT_WOMAN_1920x800.jpg 1080w,
-https://www.cartier.com/on/demandware.static/-/Library-Sites-CartierSharedLibrary-BGTJ/default/dw845e3809/clp/2025/women-selection/01_HEADER_SFCC_NEL_CROSS_CAT_WOMAN_1920x800.jpg 1600w,
-https://www.cartier.com/on/demandware.static/-/Library-Sites-CartierSharedLibrary-BGTJ/default/dw845e3809/clp/2025/women-selection/01_HEADER_SFCC_NEL_CROSS_CAT_WOMAN_1920x800.jpg 2000w
-                    " class="full-image"/>
-                    <div class="black-overlay-20"></div>
-                </div>
-                <div class="hero-slide-animation">
-                    <div class="bg-column-mask"><div class="bg-color-column"></div></div>
-                    <div class="bg-column-mask"><div class="bg-color-column"></div></div>
-                    <div class="bg-column-mask"><div class="bg-color-column"></div></div>
-                    <div class="bg-column-mask"><div class="bg-color-column"></div></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div data-w-id="5b1d9d81-bf2e-f723-fbb2-7ee6f7c9681b" class="hero-slides w-slide">
-            <div class="hero-slide-wrapper">
-                <div class="container">
-                    <div class="hero-contents">
-                        <div class="mask">
-                            <h1 class="white-text">Express Your Individuality</h1>
-                        </div>
-                        <div class="hero-margin">
-                            <div class="hero-paragraph-mask">
-                                <p class="text-secondary">Find the perfect expression of your individuality with our carefully curated jewelry pieces designed for those who appreciate luxury and craftsmanship.</p>
-                            </div>
-                        </div>
-                        <div class="mask">
-                            <a data-w-id="38946bc3-59ce-2312-103a-aa6668b7fbab" href="/shop" class="primary-button white-btn w-inline-block">
-                                <div class="button-text-wrapper">
-                                    <div class="default-text">Discover IcebyFlexy</div>
-                                    <div class="hover-text">Discover IcebyFlexy</div>
-                                </div>
-                                <div class="button-hover-circle white"></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="absolute-image-hero">
-                    <img src="https://gigx267.github.io/Icebyflexy2025-/p5.jpg " loading="lazy" alt="Exquisite jewelry craftsmanship" sizes="100vw" srcset="
-https://gigx267.github.io/Icebyflexy2025-/p5.jpg 500w,
- https://gigx267.github.io/Icebyflexy2025-/p5.jpg800w,
-https://gigx267.github.io/Icebyflexy2025-/p5.jpg 1080w,
-https://gigx267.github.io/Icebyflexy2025-/p5.jpg  1600w,
-https://gigx267.github.io/Icebyflexy2025-/p5.jpg 2000w
-                    " class="full-image"/>
-                    <div class="black-overlay-20"></div>
-                </div>
-                <div class="hero-slide-animation">
-                    <div class="bg-column-mask"><div class="bg-color-column"></div></div>
-                    <div class="bg-column-mask"><div class="bg-color-column"></div></div>
-                    <div class="bg-column-mask"><div class="bg-color-column"></div></div>
-                    <div class="bg-column-mask"><div class="bg-color-column"></div></div>
-                </div>
-            </div>
-        </div>
-
-    </div>
 
     <!-- Navigation Arrows -->
     <div class="nav-hero-wrapper w-slider-arrow-left">
