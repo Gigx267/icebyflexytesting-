@@ -3,43 +3,169 @@
 <head>
     <meta charset="utf-8"/>
     <title>Icebyflexy - Webflow Ecommerce Website Template</title>
-  <meta content="Discover the Icebyflexy difference: Nigeria's source for curated, exquisite jewelry. From delicate designs to bold, statement pieces, each craft is made to celebrate your unique style and elevate every occasion, on-trend and built to last." name="description"/>
-<meta content="Icebyflexy Nigeria: Official Home for Exquisite Jewelry and Luxury Accessories" property="og:title"/>
-<meta content="Discover the Icebyflexy difference: Nigeria's source for curated, exquisite jewelry. From delicate designs to bold, statement pieces, each craft is made to celebrate your unique style and elevate every occasion, on-trend and built to last." property="og:description"/>
-<meta content="Icebyflexy Nigeria: Official Home for Exquisite Jewelry and Luxury Accessories" property="twitter:title"/>
-<meta content="Discover the Icebyflexy difference: Nigeria's source for curated, exquisite jewelry. From delicate designs to bold, statement pieces, each craft is made to celebrate your unique style and elevate every occasion, on-trend and built to last." property="twitter:description"/>
+    <meta content="Discover the Icebyflexy difference: Nigeria's source for curated, exquisite jewelry. From delicate designs to bold, statement pieces, each craft is made to celebrate your unique style and elevate every occasion, on-trend and built to last." name="description"/>
+    <meta content="Icebyflexy Nigeria: Official Home for Exquisite Jewelry and Luxury Accessories" property="og:title"/>
+    <meta content="Discover the Icebyflexy difference: Nigeria's source for curated, exquisite jewelry. From delicate designs to bold, statement pieces, each craft is made to celebrate your unique style and elevate every occasion, on-trend and built to last." property="og:description"/>
+    <meta content="Icebyflexy Nigeria: Official Home for Exquisite Jewelry and Luxury Accessories" property="twitter:title"/>
+    <meta content="Discover the Icebyflexy difference: Nigeria's source for curated, exquisite jewelry. From delicate designs to bold, statement pieces, each craft is made to celebrate your unique style and elevate every occasion, on-trend and built to last." property="twitter:description"/>
     <meta property="og:type" content="website"/>
     <meta content="summary_large_image" name="twitter:card"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta content="Webflow" name="generator"/>
     
-    <!-- Stylesheets -->
-    <link href="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/css/jewellery-nx.webflow.a739f64d1.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Critical CSS Inlined -->
+    <style>
+        /* Critical CSS for initial render */
+        body {
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        
+        .page-wrapper {
+            min-height: 100vh;
+        }
+        
+        /* Mobile Hero Section - Full Screen */
+        .hero-section {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+                url('b1.jpg') center/cover no-repeat;
+            min-height: 100vh;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            line-height: 1.5;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            color: #000;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-button:hover::before {
+            left: 100%;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 767px) {
+            .hero-section {
+                padding: 0;
+                height: 100vh;
+                min-height: 100vh;
+            }
+            
+            .hero-content {
+                padding: 0 1.5rem;
+            }
+            
+            .hero-button {
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* Hide non-critical content initially */
+        .section, .top-notice-bar, .progress-bar, .transparent-navbar {
+            opacity: 0;
+        }
+        
+        /* Loading state */
+        .page-wrapper.loaded .section,
+        .page-wrapper.loaded .top-notice-bar,
+        .page-wrapper.loaded .progress-bar,
+        .page-wrapper.loaded .transparent-navbar {
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/css/jewellery-nx.webflow.a739f64d1.min.css" as="style">
+    <link rel="preload" href="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409ae0aa4ddf068475f2d_pexels-ardalan-hamedani-295715724-16146016.jpg" as="image">
+    
+    <!-- Non-critical CSS -->
+    <link rel="stylesheet" href="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/css/jewellery-nx.webflow.a739f64d1.min.css" media="print" onload="this.media='all'">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
     
     <!-- Icons -->
     <link href="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/6715236504557e36d66a7d35_jewelery.png" rel="shortcut icon" type="image/x-icon"/>
     <link href="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671523c7ad2ce77ba7937523_Frame%203.png" rel="apple-touch-icon"/>
-    
-    <style>
-        /* CSS styles remain unchanged */
-        @media (min-width:992px) {
-            html.w-mod-js:not(.w-mod-ix) [data-w-id="db357585-5d10-bc5d-6ee8-30d585dda0c4"] {
-                opacity:0;
-                transform:translate3d(0, 0, 0) scale3d(1.1, 1.1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-            }
-            /* Other media queries... */
-        }
-        
-        body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-    </style>
     
     <script type="text/javascript">
         window.__WEBFLOW_CURRENCY_SETTINGS = {
@@ -52,6 +178,7 @@
             "hideDecimalForWholeNumbers":false
         };
         
+        // Load fonts after critical content
         WebFont.load({
             google: {
                 families: [
@@ -63,6 +190,11 @@
                     "Sorts Mill Goudy:regular"
                 ]
             }
+        });
+        
+        // Mark page as loaded
+        window.addEventListener('load', function() {
+            document.querySelector('.page-wrapper').classList.add('loaded');
         });
         
         !function(o,c){
@@ -88,1867 +220,48 @@
             </div>
         </section>
 
-        <!-- Navigation -->
-        <div data-animation="over-right" class="transparent-navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="all" data-w-id="ceb954e0-da0f-3caf-ac48-a87438d543dc" role="banner" data-duration="400" id="navbar">
-         <!-- Navigation -->
-<div data-animation="over-right" class="transparent-navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="all" data-w-id="ceb954e0-da0f-3caf-ac48-a87438d543dc" role="banner" data-duration="400" id="navbar">
-    
-    <!-- Search Popup -->
-    <div class="search-popup">
-        <div class="container">
-            <form action="/search" class="search-field-wrapper w-form">
-                <input class="popup-search-input w-input" maxlength="256" name="query" placeholder="Search…" type="search" id="search" required=""/>
-                <input type="submit" class="search-button-absolute w-button" value="search"/>
-            </form>
-            <div data-w-id="ceb954e0-da0f-3caf-ac48-a87438d543e2" class="close-icon-white">close</div>
-        </div>
-    </div>
-
-    <!-- Main Navigation -->
-    <nav class="container static">
-        <div class="navbar-wrapper">
-            
-            <!-- Mobile Menu -->
-            <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
-                <div class="_30px-text-white">Browse Pages</div>
-                <div class="nav-menu">
-                    <div class="nav-list">
-                        <a href="/" aria-current="page" class="nav-link white w-inline-block w--current">
-                            <div>Home</div>
-                        </a>
-                        <div class="border-wrapper">
-                            <div class="nav-border white"></div>
-                        </div>
-                    </div>
-                    <div class="nav-list">
-                        <a href="/about" class="nav-link white w-inline-block">
-                            <div>About</div>
-                        </a>
-                        <div class="border-wrapper">
-                            <div class="nav-border white"></div>
-                        </div>
-                    </div>
-                    <div class="nav-list">
-                        <a href="/blog" class="nav-link white w-inline-block">
-                            <div>Blog</div>
-                        </a>
-                        <div class="border-wrapper">
-                            <div class="nav-border white"></div>
-                        </div>
-                    </div>
-                    <div class="nav-list">
-                        <a href="/shop" class="nav-link white w-inline-block">
-                            <div>Shop</div>
-                        </a>
-                        <div class="border-wrapper">
-                            <div class="nav-border white"></div>
-                        </div>
-                    </div>
-                    <div class="nav-list">
-                        <a href="/faq" class="nav-link white w-inline-block">
-                            <div>FAQ</div>
-                        </a>
-                        <div class="border-wrapper">
-                            <div class="nav-border white"></div>
-                        </div>
-                    </div>
-                    <a data-w-id="38946bc3-59ce-2312-103a-aa6668b7fbab" href="/contact" class="primary-button white-btn w-inline-block">
-                        <div class="button-text-wrapper">
-                            <div class="default-text">Contact Us</div>
-                            <div class="hover-text">Contact Us</div>
-                        </div>
-                        <div class="button-hover-circle white"></div>
-                    </a>
-                </div>
-
-                <!-- Newsletter Section -->
-                <div class="newsletter-wrapper w-form">
-                    <div class="_20px-text-white">Discover Our Expertise</div>
-                    <form id="wf-form-contact" name="wf-form-contact" data-name="contact" method="get" class="newsletter-form" data-wf-page-id="670f7de6dec5c0c82ae616ea" data-wf-element-id="c20f6449-0644-c956-b1f2-c3a0bd3ae804">
-                        <input class="input-field-with-icon-border w-input" maxlength="256" name="Customer-Email-2" data-name="Customer Email 2" placeholder="Email address" type="email" id="Customer-Email-2" required=""/>
-                        <input type="submit" data-wait="" class="absolute-form-button w-button" value=""/>
-                    </form>
-                    <div class="success-message w-form-done">
-                        <div>Thank you! Your submission has been received!</div>
-                    </div>
-                    <div class="error-message w-form-fail">
-                        <div>Oops! Something went wrong while submitting the form.</div>
-                    </div>
-                </div>
-
-                <!-- Close Mobile Menu -->
-                <div class="close-navbar-icon w-nav-button">
-                    <div class="close-icon-rotate-white">close</div>
-                </div>
-            </nav>
-
-            <!-- Desktop Navigation -->
-            <div class="deskop-nav">
-                
-                <!-- Left Navigation Links -->
-                <div class="nav-list">
-                    <a href="/" aria-current="page" class="nav-link w-inline-block w--current">
-                        <div>Home</div>
-                    </a>
-                    <div class="border-wrapper">
-                        <div class="nav-border"></div>
-                    </div>
-                </div>
-
-                <!-- Collections Dropdown -->
-                <div data-delay="0" data-hover="true" class="nav-dropdown-wrapper mega-menu w-dropdown">
-                    <div class="nav-toggle w-dropdown-toggle">
-                        <a href="#" class="nav-link w-inline-block">
-                            <div>Collections</div>
-                            <div class="nav-dropdown-icon">expand_more</div>
-                        </a>
-                        <div class="border-wrapper">
-                            <div class="nav-border"></div>
-                        </div>
-                    </div>
-                    <nav class="nav-dropdown-contents mega w-dropdown-list">
-                        <div class="nav-dropdown-contents-body">
-                            <div class="nav-dropdown-links-block">
-                                <div class="w-dyn-list">
-                                    <div role="list" class="category-grid w-dyn-items">
-                                        
-                                        <!-- Rings Category -->
-                                        <div role="listitem" class="w-dyn-item">
-                                            <div data-w-id="ebe7c611-a639-5a37-6005-cd642a8e301c">
-                                                <a href="/category/rings" class="mask full w-inline-block">
-                                                    <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f5fa3210f9f512297f04_pexels-anastasia-nagibina-1116204043-27687905.avif" alt="" sizes="100vw" srcset="
-                                                        https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f5fa3210f9f512297f04_pexels-anastasia-nagibina-1116204043-27687905-p-500.avif 500w,
-                                                        https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f5fa3210f9f512297f04_pexels-anastasia-nagibina-1116204043-27687905-p-800.avif 800w,
-                                                        https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f5fa3210f9f512297f04_pexels-anastasia-nagibina-1116204043-27687905-p-1080.avif 1080w,
-                                                        https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f5fa3210f9f512297f04_pexels-anastasia-nagibina-1116204043-27687905.avif 1920w
-                                                    " class="portrait-380px"/>
-                                                    <div class="portfolio-full-hover">
-                                                        <div class="_24px-text-white">Rings</div>
-                                                    </div>
-                                                </a>
-                                                <div class="mt-10px">
-                                                    <div class="_20px-text">Rings</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Ear Rings Category -->
-                                        <div role="listitem" class="w-dyn-item">
-                                            <div data-w-id="ebe7c611-a639-5a37-6005-cd642a8e301c">
-                                                <a href="/category/ear-rings" class="mask full w-inline-block">
-                                                    <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713b2a8ae511a5e70014be5_8120.avif" alt="" sizes="100vw" srcset="
-                                                        https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713b2a8ae511a5e70014be5_8120-p-500.avif 500w,
-                                                        https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713b2a8ae511a5e70014be5_8120.avif 1000w
-                                                    " class="portrait-380px"/>
-                                                    <div class="portfolio-full-hover">
-                                                        <div class="_24px-text-white">Ear Rings</div>
-                                                    </div>
-                                                </a>
-                                                <div class="mt-10px">
-                                                    <div class="_20px-text">Ear Rings</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Necklace Category -->
-                                        <div role="listitem" class="w-dyn-item">
-                                            <div data-w-id="ebe7c611-a639-5a37-6005-cd642a8e301c">
-                                                <a href="/category/necklace" class="mask full w-inline-block">
-                                                    <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f6589d3ac37ffa7ae3a8_14346.avif" alt="" sizes="100vw" srcset="
-                                                        https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f6589d3ac37ffa7ae3a8_14346-p-500.avif 500w,
-                                                        https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f6589d3ac37ffa7ae3a8_14346-p-800.avif 800w,
-                                                        https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f6589d3ac37ffa7ae3a8_14346-p-1080.avif 1080w,
-                                                        https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f6589d3ac37ffa7ae3a8_14346.avif 1957w
-                                                    " class="portrait-380px"/>
-                                                    <div class="portfolio-full-hover">
-                                                        <div class="_24px-text-white">Necklace</div>
-                                                    </div>
-                                                </a>
-                                                <div class="mt-10px">
-                                                    <div class="_20px-text">Necklace</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Bracelets Category -->
-                                        <div role="listitem" class="w-dyn-item">
-                                            <div data-w-id="ebe7c611-a639-5a37-6005-cd642a8e301c">
-                                                <a href="/category/bracelets" class="mask full w-inline-block">
-                                                    <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f7a6553d6eed011ee167_24485.avif" alt="" sizes="100vw" srcset="
-                                                        https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f7a6553d6eed011ee167_24485-p-500.avif 500w,
-                                                        https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f7a6553d6eed011ee167_24485.avif 1333w
-                                                    " class="portrait-380px"/>
-                                                    <div class="portfolio-full-hover">
-                                                        <div class="_24px-text-white">Bracelets</div>
-                                                    </div>
-                                                </a>
-                                                <div class="mt-10px">
-                                                    <div class="_20px-text">Bracelets</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-
-                <!-- Contact Link -->
-                <div class="nav-list">
-                    <a href="/contact" class="nav-link w-inline-block">
-                        <div>Contact Us</div>
-                    </a>
-                    <div class="border-wrapper">
-                        <div class="nav-border"></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Logo -->
-            <a href="/" aria-current="page" class="w-inline-block w--current">
-                <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67149a70d5982a9290e57934_Icebyflexy.avif" loading="lazy" alt="" class="site-logo"/>
-            </a>
-
-            <!-- Right Icons (Search, Account, Cart) -->
-            <div class="w-layout-hflex ecommerce-icons-20px-gap">
-                
-                <!-- Search Icon -->
-                <div class="pointer">
-                    <img data-w-id="ceb954e0-da0f-3caf-ac48-a87438d5441c" loading="lazy" alt="" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67136c16cd6db1fdb93fb837_search-interface-symbol.avif" class="icon-svg-20-px"/>
-                </div>
-
-                <!-- Account Icon -->
-                <a href="/user-account" class="account-link-block w-inline-block">
-                    <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67136c217b8e1b5fed89122a_people%20(1).avif" alt="" class="icon-svg-20-px"/>
-                </a>
-
-                <!-- Shopping Cart -->
-                <div data-open-product="" data-wf-cart-type="rightSidebar" data-wf-cart-query="query Dynamo3 {
-                    database {
-                        id
-                        commerceOrder {
-                            comment
-                            extraItems {
-                                name
-                                pluginId
-                                pluginName
-                                price {
-                                    decimalValue
-                                    string
-                                    unit
-                                    value
-                                }
-                            }
-                            id
-                            startedOn
-                            statusFlags {
-                                hasDownloads
-                                hasSubscription
-                                isFreeOrder
-                                requiresShipping
-                            }
-                            subtotal {
-                                decimalValue
-                                string
-                                unit
-                                value
-                            }
-                            total {
-                                decimalValue
-                                string
-                                unit
-                                value
-                            }
-                            updatedOn
-                            userItems {
-                                count
-                                id
-                                price {
-                                    value
-                                    unit
-                                    decimalValue
-                                    string
-                                }
-                                product {
-                                    id
-                                    cmsLocaleId
-                                    draft
-                                    archived
-                                    f_name_: name
-                                    f_sku_properties_3dr: skuProperties {
-                                        id
-                                        name
-                                        enum {
-                                            id
-                                            name
-                                            slug
-                                        }
-                                    }
-                                }
-                                rowTotal {
-                                    decimalValue
-                                    string
-                                    unit
-                                    value
-                                }
-                                sku {
-                                    cmsLocaleId
-                                    draft
-                                    archived
-                                    f_main_image_4dr: mainImage {
-                                        url
-                                        file {
-                                            size
-                                            origFileName
-                                            createdOn
-                                            updatedOn
-                                            mimeType
-                                            width
-                                            height
-                                            variants {
-                                                origFileName
-                                                quality
-                                                height
-                                                width
-                                                s3Url
-                                                error
-                                                size
-                                            }
-                                        }
-                                        alt
-                                    }
-                                    f_sku_values_3dr: skuValues {
-                                        property {
-                                            id
-                                        }
-                                        value {
-                                            id
-                                        }
-                                    }
-                                    id
-                                }
-                                subscriptionFrequency
-                                subscriptionInterval
-                                subscriptionTrial
-                            }
-                            userItemsCount
-                        }
-                    }
-                    site {
-                        commerce {
-                            id
-                            businessAddress {
-                                country
-                            }
-                            defaultCountry
-                            defaultCurrency
-                            quickCheckoutEnabled
-                        }
-                    }
-                }" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper" data-node-type="commerce-cart-wrapper">
-                    
-                    <!-- Cart Button -->
-                    <a class="w-commerce-commercecartopenlink cart-button w-inline-block" role="button" aria-haspopup="dialog" aria-label="Open cart" data-node-type="commerce-cart-open-link" href="#">
-                        <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67136c2fdf7d67c12e9ea41a_shopping-cart.avif" alt="" class="icon-svg-20-px"/>
-                        <div data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22Number%22%2C%22filter%22%3A%7B%22type%22%3A%22numberPrecision%22%2C%22params%22%3A%5B%220%22%2C%22numberPrecision%22%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItemsCount%22%7D%7D%5D" class="w-commerce-commercecartopenlinkcount cart-quantity-white">0</div>
-                    </a>
-
-                    <!-- Cart Dropdown Content -->
-                    <div style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightSidebar cart-wrapper" data-node-type="commerce-cart-container-wrapper">
-                        <!-- Cart container content -->
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Mobile Hamburger Menu -->
-            <div data-w-id="baec96bf-18de-c2e4-d45e-a3d9e9b00447" class="hamburger-menu w-nav-button">
-                <div class="bars">
-                    <div class="bar-wrapper">
-                        <div class="hamburger-line"></div>
-                        <div class="_3px-hover-style"></div>
-                    </div>
-                    <div class="bar-wrapper">
-                        <div class="hamburger-line _2"></div>
-                        <div class="_3px-hover-style _2"></div>
-                    </div>
-                    <div class="bar-wrapper">
-                        <div class="hamburger-line _3"></div>
-                        <div class="_3px-hover-style _3"></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </nav>
-</div>
-        </div>
-
-
-<header class="hero-section">
-  <div class="hero-content">
-    <h1 class="hero-title">Discover a World of Luxurious Jewelry</h1>
-    <p class="hero-subtitle">Exquisite craftsmanship meets timeless elegance in every piece</p>
-    <a href="/shop" class="hero-button">
-      <span class="button-text">Explore Collection</span>
-    </a>
-  </div>
-</header>
-
-<style>
-.hero-section {
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
-    url('b1.jpg') center/cover no-repeat;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 2rem;
-  position: relative;
-}
-
-.hero-content {
-  max-width: 800px;
-  animation: fadeInUp 1s ease-out;
-}
-
-.hero-title {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.hero-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
-  margin-bottom: 2.5rem;
-  opacity: 0.9;
-  line-height: 1.5;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  color: #000;
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  transition: left 0.7s ease;
-}
-
-.hero-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-.hero-button:hover::before {
-  left: 100%;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 1rem;
-  }
-  
-  .hero-button {
-    padding: 0.9rem 2rem;
-    font-size: 1rem;
-  }
-}
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     <!-- Hero Slider -->
-
-
-    <!-- Navigation Arrows -->
-    <div class="nav-hero-wrapper w-slider-arrow-left">
-        <div data-w-id="38fe48ca-6291-f652-c6ef-f9c59b25ba8b" style="transform:translate3d(-30%, null, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="navigation-icon-wrapper">
-            <div class="horizontal-arrow-wrapper">
-                <div class="arrow-icon">chevron_left</div>
-                <div class="arrow-icon">chevron_left</div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="nav-hero-wrapper w-slider-arrow-right">
-        <div data-w-id="ebd6e5f1-7128-55c3-92a9-ced7d96dfbc7" style="transform:translate3d(30%, null, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="navigation-icon-wrapper">
-            <div class="horizontal-arrow-wrapper">
-                <div class="arrow-icon">chevron_right</div>
-                <div class="arrow-icon">chevron_right</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slider Navigation Dots -->
-    <div class="hidden w-slider-nav w-round w-num"></div>
-</div>
-        <!-- Categories Section -->
-        <section class="section">
-            <div class="container">
-           <!-- Categories Section -->
-<section class="section">
-    <div class="container">
         
-        <!-- Section Title -->
-        <div class="title-wrapper">
-            <div class="mask">
-                <h2 data-w-id="5e0dc5f6-7ac0-34d1-dd9e-efd6960d522d" class="heading">Our Categories</h2>
-            </div>
-            <div class="mask">
-                <p data-w-id="5e0dc5f6-7ac0-34d1-dd9e-efd6960d522f">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-            </div>
-        </div>
 
-        <!-- Categories Grid -->
-        <div class="slide-from-bottom-1s w-dyn-list">
-            <div role="list" class="banners w-dyn-items">
-                
-                <!-- Rings Category -->
-                <div role="listitem" class="w-dyn-item">
-                    <a href="/category/rings" data-w-id="d1b6ad19-5869-7d2f-b01d-556fc7dccb31" class="top-category w-inline-block">
-                        <img width="70" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f5fa3210f9f512297f04_pexels-anastasia-nagibina-1116204043-27687905.avif" alt="" loading="lazy" sizes="(max-width: 479px) 93vw, (max-width: 767px) 45vw, (max-width: 991px) 46vw, 23vw" srcset="
-                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f5fa3210f9f512297f04_pexels-anastasia-nagibina-1116204043-27687905-p-500.avif 500w,
-                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f5fa3210f9f512297f04_pexels-anastasia-nagibina-1116204043-27687905-p-800.avif 800w,
-                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f5fa3210f9f512297f04_pexels-anastasia-nagibina-1116204043-27687905-p-1080.avif 1080w,
-                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f5fa3210f9f512297f04_pexels-anastasia-nagibina-1116204043-27687905.avif 1920w
-                        " class="top-category-image"/>
-                        <div style="height:50%" class="linear-background-category"></div>
-                        <div class="absolute-center">
-                            <h3 style="transform:translate3d(0, 250%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="category-title">Rings</h3>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Ear Rings Category -->
-                <div role="listitem" class="w-dyn-item">
-                    <a href="/category/ear-rings" data-w-id="d1b6ad19-5869-7d2f-b01d-556fc7dccb31" class="top-category w-inline-block">
-                        <img width="70" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713b2a8ae511a5e70014be5_8120.avif" alt="" loading="lazy" sizes="(max-width: 479px) 93vw, (max-width: 767px) 45vw, (max-width: 991px) 46vw, 23vw" srcset="
-                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713b2a8ae511a5e70014be5_8120-p-500.avif 500w,
-                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713b2a8ae511a5e70014be5_8120.avif 1000w
-                        " class="top-category-image"/>
-                        <div style="height:50%" class="linear-background-category"></div>
-                        <div class="absolute-center">
-                            <h3 style="transform:translate3d(0, 250%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="category-title">Ear Rings</h3>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Necklace Category -->
-                <div role="listitem" class="w-dyn-item">
-                    <a href="/category/necklace" data-w-id="d1b6ad19-5869-7d2f-b01d-556fc7dccb31" class="top-category w-inline-block">
-                        <img width="70" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f6589d3ac37ffa7ae3a8_14346.avif" alt="" loading="lazy" sizes="(max-width: 479px) 93vw, (max-width: 767px) 45vw, (max-width: 991px) 46vw, 23vw" srcset="
-                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f6589d3ac37ffa7ae3a8_14346-p-500.avif 500w,
-                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f6589d3ac37ffa7ae3a8_14346-p-800.avif 800w,
-                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f6589d3ac37ffa7ae3a8_14346-p-1080.avif 1080w,
-                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f6589d3ac37ffa7ae3a8_14346.avif 1957w
-                        " class="top-category-image"/>
-                        <div style="height:50%" class="linear-background-category"></div>
-                        <div class="absolute-center">
-                            <h3 style="transform:translate3d(0, 250%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="category-title">Necklace</h3>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Bracelets Category -->
-                <div role="listitem" class="w-dyn-item">
-                    <a href="/category/bracelets" data-w-id="d1b6ad19-5869-7d2f-b01d-556fc7dccb31" class="top-category w-inline-block">
-                        <img width="70" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f7a6553d6eed011ee167_24485.avif" alt="" loading="lazy" sizes="(max-width: 479px) 93vw, (max-width: 767px) 45vw, (max-width: 991px) 46vw, 23vw" srcset="
-                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f7a6553d6eed011ee167_24485-p-500.avif 500w,
-                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6713f7a6553d6eed011ee167_24485.avif 1333w
-                        " class="top-category-image"/>
-                        <div style="height:50%" class="linear-background-category"></div>
-                        <div class="absolute-center">
-                            <h3 style="transform:translate3d(0, 250%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="category-title">Bracelets</h3>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Decorative Image -->
-        <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/6719115eeba29e20412432f6_star.avif" loading="lazy" data-w-id="9f95d2b7-fa3c-2908-8724-7e74c2bb9987" alt="" class="image"/>
-
-    </div>
-</section>
-            </div>
-        </section>
-
-        <!-- Featured Products Section -->
-        <section class="section">
-            <div class="container">
-                <!-- Featured Products Section -->
-<section class="section">
-    <div class="container">
-        
-        <!-- Banner Products Grid -->
-        <div class="banner-products-grid">
-            
-            <!-- Side Banner -->
-            <div data-w-id="86f4de10-c92a-a458-33ff-7115580c93d1" style="opacity:0;transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="product-side-banner">
-                <div class="banner-title">Featured Deals</div>
-                <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140fac4224d988f198c6ac_5043.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 95vw, (max-width: 991px) 96vw, 25vw" srcset="
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140fac4224d988f198c6ac_5043-p-500.jpg 500w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140fac4224d988f198c6ac_5043-p-800.jpg 800w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140fac4224d988f198c6ac_5043.jpg 1000w
-                " alt="" class="full-image"/>
-            </div>
-
-            <!-- Featured Products Slider -->
-            <div data-delay="4000" data-animation="cross" class="slider w-slider" data-autoplay="false" data-easing="ease-out-quad" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="800" data-infinite="true">
-                <div data-w-id="86f4de10-c92a-a458-33ff-7115580c93d8" style="opacity:0;transform:translate3d(20%, null, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(4deg) skew(0, 0)" class="w-slider-mask">
-                    
-                    <!-- Slide 1 - Golden Dusk -->
-                    <div class="w-slide">
-                        <div class="full-width w-dyn-list">
-                            <div role="list" class="_1-column-grid w-dyn-items">
-                                <div role="listitem" class="w-dyn-item">
-                                    <div class="featured-card-black">
-                                        
-                                        <!-- Product Thumbnail with Image Slider -->
-                                        <div class="featured-thumbnail-wrapper">
-                                            <div data-wf-sku-conditions='{"condition":{"fields":{"default-sku:compare-at-price":{"exists":"yes","type":"CommercePrice"}}},"timezone":"Asia/Dhaka"}' class="sale-tag">On Sale</div>
-                                            
-                                            <div data-delay="4000" data-animation="cross" class="slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
-                                                <div class="w-slider-mask">
-                                                    <div class="w-slide">
-                                                        <img data-wf-sku-bindings='[{"from":"f_main_image_4dr","to":"src"}]' loading="lazy" alt="" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180fddda747d655a46d383_ipser2007039p.avif" sizes="(max-width: 479px) 100vw, (max-width: 767px) 79vw, (max-width: 991px) 55vw, 39vw" srcset="
-                                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180fddda747d655a46d383_ipser2007039p-p-500.avif 500w,
-                                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180fddda747d655a46d383_ipser2007039p.avif 1000w
-                                                        " class="featured-thumbnail"/>
-                                                    </div>
-                                                    <div class="w-slide">
-                                                        <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180cf2a83659fc1a0483a7_2149649172.avif" loading="lazy" alt="" sizes="(max-width: 479px) 100vw, (max-width: 767px) 79vw, (max-width: 991px) 55vw, 39vw" srcset="
-                                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180cf2a83659fc1a0483a7_2149649172-p-500.avif 500w,
-                                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180cf2a83659fc1a0483a7_2149649172.avif 1000w
-                                                        " class="featured-thumbnail"/>
-                                                    </div>
-                                                    <div class="w-slide">
-                                                        <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180c6e30eedb3cec135faa_8120.avif" loading="lazy" alt="" sizes="(max-width: 479px) 100vw, (max-width: 767px) 79vw, (max-width: 991px) 55vw, 39vw" srcset="
-                                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180c6e30eedb3cec135faa_8120-p-500.avif 500w,
-                                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180c6e30eedb3cec135faa_8120.avif 1000w
-                                                        " class="featured-thumbnail"/>
-                                                    </div>
-                                                    <div class="w-slide">
-                                                        <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180cf7f8140189debfb3ad_5043.avif" loading="lazy" alt="" sizes="(max-width: 479px) 100vw, (max-width: 767px) 79vw, (max-width: 991px) 55vw, 39vw" srcset="
-                                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180cf7f8140189debfb3ad_5043-p-500.avif 500w,
-                                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180cf7f8140189debfb3ad_5043.avif 1000w
-                                                        " class="featured-thumbnail"/>
-                                                    </div>
-                                                </div>
-                                                
-                                                <!-- Slider Navigation -->
-                                                <div class="nav-arrow-wrapper w-slider-arrow-left">
-                                                    <div class="navigation-icon-wrapper _40px">
-                                                        <div class="horizontal-arrow-wrapper _18px">
-                                                            <div class="arrow-icon _18px">chevron_left</div>
-                                                            <div class="arrow-icon _18px">chevron_left</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="nav-arrow-wrapper w-slider-arrow-right">
-                                                    <div class="navigation-icon-wrapper _40px">
-                                                        <div class="horizontal-arrow-wrapper _18px">
-                                                            <div class="arrow-icon _18px">chevron_right</div>
-                                                            <div class="arrow-icon _18px">chevron_right</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="hidden w-slider-nav w-round w-num"></div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Product Details -->
-                                        <div class="w-layout-vflex featured-card-body">
-                                            <a href="/product/golden-dusk" class="mask w-inline-block">
-                                                <h3 class="_30px-text-white">Golden Dusk</h3>
-                                            </a>
-                                            <div class="w-layout-hflex product-price-block">
-                                                <div data-wf-sku-bindings='[{"from":"f_price_","to":"innerHTML"}]' class="_24px-price">$ 2,300.00 USD</div>
-                                            </div>
-                                            <div class="mb-15px">
-                                                <p class="text-secondary">Effect font move vertical share. Connection frame edit export arrow. Undo device move opacity image layer. List star blur strikethrough arrow.</p>
-                                            </div>
-                                            <div class="horizontal-block-10px-gap">
-                                                <div>SKU:</div>
-                                                <div data-wf-sku-bindings='[{"from":"f_sku_","to":"innerHTML"}]' class="_14px-text-uppercase">NX-391DR-7</div>
-                                            </div>
-                                            <div class="horizontal-block-10px-gap">
-                                                <div class="weight-800">STOCK:</div>
-                                                <div class="text-merge">
-                                                    <div data-wf-sku-conditions='{"condition":{"fields":{"default-sku:ecSkuInventoryQuantity":{"ne":0,"type":"Number"}}},"timezone":"Asia/Dhaka"}' class="_14px-text-uppercase">Available</div>
-                                                    <div data-wf-sku-conditions='{"condition":{"fields":{"default-sku:ecSkuInventoryQuantity":{"eq":0,"type":"Number"}}},"timezone":"Asia/Dhaka"}' class="_14px-text-uppercase red-color w-condition-invisible">Sold Out</div>
-                                                </div>
-                                            </div>
-                                            
-                                            <!-- Add to Cart Button -->
-                                            <div class="featured-button-wrapper">
-                                                <form data-node-type="commerce-add-to-cart-form" data-commerce-sku-id="67180fe415b8890fc07fa2d9" data-loading-text="Adding to cart..." data-commerce-product-id="67180fe32c102ec1b0173dda" class="w-commerce-commerceaddtocartform no-margin">
-                                                    <div data-w-id="86f4de10-c92a-a458-33ff-7115580c9411" class="custom-button-wrapper">
-                                                        <input type="submit" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." aria-busy="false" aria-haspopup="dialog" class="w-commerce-commerceaddtocartbutton custom-button-white" value="Add to Cart"/>
-                                                        <div class="button-hover-circle primary-focused"></div>
-                                                    </div>
-                                                    <a data-node-type="commerce-buy-now-button" data-default-text="Buy now" data-subscription-text="Subscribe now" aria-busy="false" aria-haspopup="false" style="display:none" class="w-commerce-commercebuynowbutton" href="/checkout">Buy now</a>
-                                                </form>
-                                                <div style="display:none" class="w-commerce-commerceaddtocartoutofstock" tabindex="0">
-                                                    <div>This product is out of stock.</div>
-                                                </div>
-                                                <div aria-live="assertive" data-node-type="commerce-add-to-cart-error" style="display:none" class="w-commerce-commerceaddtocarterror">
-                                                    <div data-node-type="commerce-add-to-cart-error" data-w-add-to-cart-quantity-error="Product is not available in this quantity." data-w-add-to-cart-general-error="Something went wrong when adding this item to the cart." data-w-add-to-cart-mixed-cart-error="You can't purchase another product with a subscription." data-w-add-to-cart-buy-now-error="Something went wrong when trying to purchase this item." data-w-add-to-cart-checkout-disabled-error="Checkout is disabled on this site." data-w-add-to-cart-select-all-options-error="Please select an option in each set.">Product is not available in this quantity.</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2 - Radiant Pearl -->
-                    <div class="w-slide">
-                        <div class="full-width w-dyn-list">
-                            <div role="list" class="_1-column-grid w-dyn-items">
-                                <div role="listitem" class="w-dyn-item">
-                                    <div class="featured-card-black">
-                                        <div class="featured-thumbnail-wrapper">
-                                            <div data-wf-sku-conditions='{"condition":{"fields":{"default-sku:compare-at-price":{"exists":"yes","type":"CommercePrice"}}},"timezone":"Asia/Dhaka"}' class="sale-tag">On Sale</div>
-                                            <div data-delay="4000" data-animation="cross" class="slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
-                                                <div class="w-slider-mask">
-                                                    <div class="w-slide">
-                                                        <img data-wf-sku-bindings='[{"from":"f_main_image_4dr","to":"src"}]' loading="lazy" alt="" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180ee9b86241c42475769c_wer2112150__ke301955_4p.avif" sizes="(max-width: 479px) 100vw, (max-width: 767px) 79vw, (max-width: 991px) 55vw, 39vw" srcset="
-                                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180ee9b86241c42475769c_wer2112150__ke301955_4p-p-500.avif 500w,
-                                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180ee9b86241c42475769c_wer2112150__ke301955_4p-p-800.avif 800w,
-                                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180ee9b86241c42475769c_wer2112150__ke301955_4p.avif 1700w
-                                                        " class="featured-thumbnail"/>
-                                                    </div>
-                                                    <!-- Additional slides for this product -->
-                                                </div>
-                                                <!-- Slider navigation for this product -->
-                                            </div>
-                                        </div>
-                                        <div class="w-layout-vflex featured-card-body">
-                                            <a href="/product/radiant-pearl" class="mask w-inline-block">
-                                                <h3 class="_30px-text-white">Radiant Pearl</h3>
-                                            </a>
-                                            <div class="w-layout-hflex product-price-block">
-                                                <div data-wf-sku-bindings='[{"from":"f_price_","to":"innerHTML"}]' class="_24px-price">$ 2,300.00 USD</div>
-                                            </div>
-                                            <div class="mb-15px">
-                                                <p class="text-secondary">Effect font move vertical share. Connection frame edit export arrow. Undo device move opacity image layer. List star blur strikethrough arrow.</p>
-                                            </div>
-                                            <div class="horizontal-block-10px-gap">
-                                                <div>SKU:</div>
-                                                <div data-wf-sku-bindings='[{"from":"f_sku_","to":"innerHTML"}]' class="_14px-text-uppercase">NX-391DR-7</div>
-                                            </div>
-                                            <div class="horizontal-block-10px-gap">
-                                                <div class="weight-800">STOCK:</div>
-                                                <div class="text-merge">
-                                                    <div data-wf-sku-conditions='{"condition":{"fields":{"default-sku:ecSkuInventoryQuantity":{"ne":0,"type":"Number"}}},"timezone":"Asia/Dhaka"}' class="_14px-text-uppercase">Available</div>
-                                                    <div data-wf-sku-conditions='{"condition":{"fields":{"default-sku:ecSkuInventoryQuantity":{"eq":0,"type":"Number"}}},"timezone":"Asia/Dhaka"}' class="_14px-text-uppercase red-color w-condition-invisible">Sold Out</div>
-                                                </div>
-                                            </div>
-                                            <div class="featured-button-wrapper">
-                                                <form data-node-type="commerce-add-to-cart-form" data-commerce-sku-id="67180eab0df84634934e0cfd" data-loading-text="Adding to cart..." data-commerce-product-id="67180eaaef813f4b10e8b321" class="w-commerce-commerceaddtocartform no-margin">
-                                                    <div data-w-id="4308f1fc-bca5-bd12-a262-298aef4062d5" class="custom-button-wrapper">
-                                                        <input type="submit" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." aria-busy="false" aria-haspopup="dialog" class="w-commerce-commerceaddtocartbutton custom-button-white" value="Add to Cart"/>
-                                                        <div class="button-hover-circle primary-focused"></div>
-                                                    </div>
-                                                    <a data-node-type="commerce-buy-now-button" data-default-text="Buy now" data-subscription-text="Subscribe now" aria-busy="false" aria-haspopup="false" style="display:none" class="w-commerce-commercebuynowbutton" href="/checkout">Buy now</a>
-                                                </form>
-                                                <!-- Error states -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Main Slider Navigation -->
-                <div class="hidden w-slider-arrow-left">
-                    <div class="w-icon-slider-left"></div>
-                </div>
-                <div class="hidden w-slider-arrow-right">
-                    <div class="w-icon-slider-right"></div>
-                </div>
-                <div class="slide-nav w-slider-nav"></div>
-                
-                <!-- Custom Slider Styling -->
-                <div class="nav-css w-embed">
-                    <style>
-                        .w-slider-dot {
-                            background: var(--colors--extra);
-                            border-radius: 20px;
-                            transition: width .4s ease-out, background-color .5s ease;
-                        }
-                        .w-slider-dot.w-active {
-                            background: var(--colors--primary);
-                            width: 50px;
-                            border-radius: 20px;
-                        }
-                    </style>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-            </div>
-        </section>
-
-     
-
-        <!-- Products Collections -->
-        <section class="section">
-            <div class="container">
-           <!-- Products Collections Section -->
-<section class="section">
-    <div class="container">
-        
-        <!-- Section Title -->
-        <div class="title-wrapper">
-            <div class="mask">
-                <h2 data-w-id="5e0dc5f6-7ac0-34d1-dd9e-efd6960d522d" class="heading">Explore Our Signature Collections</h2>
-            </div>
-            <div class="mask">
-                <p data-w-id="5e0dc5f6-7ac0-34d1-dd9e-efd6960d522f">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-            </div>
-        </div>
-
-        <!-- Tabbed Navigation -->
-        <div data-current="Latest" data-easing="ease" data-duration-in="300" data-duration-out="100" class="w-tabs">
-            
-            <!-- Tab Menu -->
-            <div class="product-tab-menu-25px-gap w-tab-menu">
-                <a data-w-tab="Latest" class="product-tab-link-with-border w-inline-block w-tab-link w--current">
-                    <div>Latest</div>
-                    <div class="tab-border"></div>
-                    <div class="tab-border-active"></div>
-                </a>
-                <a data-w-tab="Hot Deals" class="product-tab-link-with-border w-inline-block w-tab-link">
-                    <div>Hot Deals</div>
-                    <div class="tab-border"></div>
-                    <div class="tab-border-active"></div>
-                </a>
-                <a data-w-tab="Most Selling" class="product-tab-link-with-border w-inline-block w-tab-link">
-                    <div>Most Sold</div>
-                    <div class="tab-border"></div>
-                    <div class="tab-border-active"></div>
+        <!-- Optimized Hero Section -->
+        <header class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover a World of Luxurious Jewelry</h1>
+                <p style="color: aliceblue;" class="hero-subtitle">Exquisite craftsmanship meets timeless elegance in every piece</p>
+                <a href="/shop" class="hero-button">
+                    <span class="button-text">Explore Collection</span>
                 </a>
             </div>
+        </header>
 
-            <!-- Tab Content -->
-            <div class="product-tab-contents w-tab-content">
-                
-                <!-- Latest Products Tab -->
-                <div data-w-tab="Latest" class="w-tab-pane w--tab-active">
-                    <div class="w-dyn-list">
-                        <div role="list" class="_4-column-grid w-dyn-items">
-                            
-                            <!-- Twilight Charm Bracelet -->
-                            <div role="listitem" class="w-dyn-item">
-                                <div class="product-card">
-                                    <div class="product-thumbnail-wrapper">
-                                        <img data-wf-sku-bindings='[{"from":"f_main_image_4dr","to":"src"}]' loading="lazy" alt="" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/671813fa68e5058d175e192e_pngwing.com%20(3).avif" class="product-thumbnail-2"/>
-                                        <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718138c6af5eaefa634844b_2151695004.avif" alt="" sizes="(max-width: 479px) 100vw, (max-width: 767px) 46vw, (max-width: 991px) 47vw, 23vw" srcset="
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718138c6af5eaefa634844b_2151695004-p-500.avif 500w,
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718138c6af5eaefa634844b_2151695004-p-800.avif 800w,
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718138c6af5eaefa634844b_2151695004.avif 1500w
-                                        " class="show-on-hover-2"/>
-                                        <a href="/product/twilight-charm-bracelet" class="link-to-details-page w-inline-block"></a>
-                                        <div data-wf-sku-conditions='{"condition":{"fields":{"default-sku:compare-at-price":{"exists":"yes","type":"CommercePrice"}}},"timezone":"Asia/Dhaka"}' class="sale-tag">On Sale</div>
-                                    </div>
-                                    <div class="w-layout-vflex product-body">
-                                        <a href="/product/twilight-charm-bracelet" class="mask w-inline-block">
-                                            <div class="product-name-on-card">Twilight Charm Bracelet</div>
-                                        </a>
-                                        <div class="price-button-wrapper">
-                                            <div class="w-layout-hflex product-price-block-2">
-                                                <div data-wf-sku-bindings='[{"from":"f_price_","to":"innerHTML"}]' class="card-price">$ 3,250.00 USD</div>
-                                                <div data-wf-sku-bindings='[{"from":"f_compare_at_price_7dr10dr","to":"innerHTML"}]' class="card-compare-prices">$ 2,000.00 USD</div>
-                                            </div>
-                                            <div>
-                                                <form data-node-type="commerce-add-to-cart-form" data-commerce-sku-id="6718141ac2ee9576b5673fde" data-loading-text="Adding to cart..." data-commerce-product-id="67181418da747d655a4aa3e7" class="w-commerce-commerceaddtocartform product-button-wrapper">
-                                                    <div class="text-link-with-border">
-                                                        <input type="submit" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." aria-busy="false" aria-haspopup="dialog" class="w-commerce-commerceaddtocartbutton custom-add-to-card-button" value="Add to Cart"/>
-                                                        <div class="mask">
-                                                            <div class="link-border"></div>
-                                                            <div class="link-border-secodnary"></div>
-                                                        </div>
-                                                    </div>
-                                                    <a href="/product/twilight-charm-bracelet" class="text-link-with-border w-inline-block">
-                                                        <div>View Details</div>
-                                                        <div class="mask">
-                                                            <div class="link-border"></div>
-                                                            <div class="link-border-secodnary"></div>
-                                                        </div>
-                                                    </a>
-                                                    <a data-node-type="commerce-buy-now-button" data-default-text="Buy now" data-subscription-text="Subscribe now" aria-busy="false" aria-haspopup="false" style="display:none" class="w-commerce-commercebuynowbutton" href="/checkout">Buy now</a>
-                                                </form>
-                                                <!-- Error states -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Opal Gleam Bangle -->
-                            <div role="listitem" class="w-dyn-item">
-                                <div class="product-card">
-                                    <div class="product-thumbnail-wrapper">
-                                        <img data-wf-sku-bindings='[{"from":"f_main_image_4dr","to":"src"}]' loading="lazy" alt="" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67181372e1aa339ad3c8cf59_pngwing.com.avif" class="product-thumbnail-2"/>
-                                        <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67181386b2eea951358e9739_24485.avif" alt="" sizes="(max-width: 479px) 100vw, (max-width: 767px) 46vw, (max-width: 991px) 47vw, 23vw" srcset="
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67181386b2eea951358e9739_24485-p-500.avif 500w,
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67181386b2eea951358e9739_24485.avif 1333w
-                                        " class="show-on-hover-2"/>
-                                        <a href="/product/opal-gleam-bangle" class="link-to-details-page w-inline-block"></a>
-                                        <div data-wf-sku-conditions='{"condition":{"fields":{"default-sku:compare-at-price":{"exists":"yes","type":"CommercePrice"}}},"timezone":"Asia/Dhaka"}' class="sale-tag">On Sale</div>
-                                    </div>
-                                    <div class="w-layout-vflex product-body">
-                                        <a href="/product/opal-gleam-bangle" class="mask w-inline-block">
-                                            <div class="product-name-on-card">Opal Gleam Bangle</div>
-                                        </a>
-                                        <div class="price-button-wrapper">
-                                            <div class="w-layout-hflex product-price-block-2">
-                                                <div data-wf-sku-bindings='[{"from":"f_price_","to":"innerHTML"}]' class="card-price">$ 3,250.00 USD</div>
-                                                <div data-wf-sku-bindings='[{"from":"f_compare_at_price_7dr10dr","to":"innerHTML"}]' class="card-compare-prices">$ 2,000.00 USD</div>
-                                            </div>
-                                            <div>
-                                                <form data-node-type="commerce-add-to-cart-form" data-commerce-sku-id="671813c49f17cfabe46edc13" data-loading-text="Adding to cart..." data-commerce-product-id="671813c32c102ec1b01a7c6d" class="w-commerce-commerceaddtocartform product-button-wrapper">
-                                                    <div class="text-link-with-border">
-                                                        <input type="submit" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." aria-busy="false" aria-haspopup="dialog" class="w-commerce-commerceaddtocartbutton custom-add-to-card-button" value="Add to Cart"/>
-                                                        <div class="mask">
-                                                            <div class="link-border"></div>
-                                                            <div class="link-border-secodnary"></div>
-                                                        </div>
-                                                    </div>
-                                                    <a href="/product/opal-gleam-bangle" class="text-link-with-border w-inline-block">
-                                                        <div>View Details</div>
-                                                        <div class="mask">
-                                                            <div class="link-border"></div>
-                                                            <div class="link-border-secodnary"></div>
-                                                        </div>
-                                                    </a>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Serenity Chain -->
-                            <div role="listitem" class="w-dyn-item">
-                                <div class="product-card">
-                                    <div class="product-thumbnail-wrapper">
-                                        <img data-wf-sku-bindings='[{"from":"f_main_image_4dr","to":"src"}]' loading="lazy" alt="" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718112ce2311f76fb921d69_vecteezy_ai-generated-berliant-necklace-isolated-on-transparent_35242052.avif" sizes="(max-width: 479px) 100vw, (max-width: 767px) 43vw, (max-width: 991px) 45vw, 21vw" srcset="
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718112ce2311f76fb921d69_vecteezy_ai-generated-berliant-necklace-isolated-on-transparent_35242052-p-500.avif 500w,
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718112ce2311f76fb921d69_vecteezy_ai-generated-berliant-necklace-isolated-on-transparent_35242052-p-800.avif 800w,
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718112ce2311f76fb921d69_vecteezy_ai-generated-berliant-necklace-isolated-on-transparent_35242052-p-1080.avif 1080w,
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718112ce2311f76fb921d69_vecteezy_ai-generated-berliant-necklace-isolated-on-transparent_35242052-p-1600.avif 1600w,
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718112ce2311f76fb921d69_vecteezy_ai-generated-berliant-necklace-isolated-on-transparent_35242052.avif 2662w
-                                        " class="product-thumbnail-2"/>
-                                        <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718116cebb7e97593017ade_pexels-nxtclick02-19646999.avif" alt="" sizes="(max-width: 479px) 100vw, (max-width: 767px) 46vw, (max-width: 991px) 47vw, 23vw" srcset="
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718116cebb7e97593017ade_pexels-nxtclick02-19646999-p-500.avif 500w,
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718116cebb7e97593017ade_pexels-nxtclick02-19646999-p-800.avif 800w,
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718116cebb7e97593017ade_pexels-nxtclick02-19646999-p-1080.avif 1080w,
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718116cebb7e97593017ade_pexels-nxtclick02-19646999.avif 1920w
-                                        " class="show-on-hover-2"/>
-                                        <a href="/product/serenity-chain" class="link-to-details-page w-inline-block"></a>
-                                        <div data-wf-sku-conditions='{"condition":{"fields":{"default-sku:compare-at-price":{"exists":"yes","type":"CommercePrice"}}},"timezone":"Asia/Dhaka"}' class="sale-tag">On Sale</div>
-                                    </div>
-                                    <div class="w-layout-vflex product-body">
-                                        <a href="/product/serenity-chain" class="mask w-inline-block">
-                                            <div class="product-name-on-card">Serenity Chain</div>
-                                        </a>
-                                        <div class="price-button-wrapper">
-                                            <div class="w-layout-hflex product-price-block-2">
-                                                <div data-wf-sku-bindings='[{"from":"f_price_","to":"innerHTML"}]' class="card-price">$ 3,250.00 USD</div>
-                                                <div data-wf-sku-bindings='[{"from":"f_compare_at_price_7dr10dr","to":"innerHTML"}]' class="card-compare-prices">$ 2,000.00 USD</div>
-                                            </div>
-                                            <div>
-                                                <form data-node-type="commerce-add-to-cart-form" data-commerce-sku-id="6718114898d64f1e0d849937" data-loading-text="Adding to cart..." data-commerce-product-id="67181146f8140189dec38834" class="w-commerce-commerceaddtocartform product-button-wrapper">
-                                                    <div class="text-link-with-border">
-                                                        <input type="submit" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." aria-busy="false" aria-haspopup="dialog" class="w-commerce-commerceaddtocartbutton custom-add-to-card-button" value="Add to Cart"/>
-                                                        <div class="mask">
-                                                            <div class="link-border"></div>
-                                                            <div class="link-border-secodnary"></div>
-                                                        </div>
-                                                    </div>
-                                                    <a href="/product/serenity-chain" class="text-link-with-border w-inline-block">
-                                                        <div>View Details</div>
-                                                        <div class="mask">
-                                                            <div class="link-border"></div>
-                                                            <div class="link-border-secodnary"></div>
-                                                        </div>
-                                                    </a>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Eternal Grace Pendant -->
-                            <div role="listitem" class="w-dyn-item">
-                                <div class="product-card">
-                                    <div class="product-thumbnail-wrapper">
-                                        <img data-wf-sku-bindings='[{"from":"f_main_image_4dr","to":"src"}]' loading="lazy" alt="" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67181061802a6ff9936576f6_vecteezy_necklace-with-blue-stones_48759474.avif" sizes="(max-width: 479px) 100vw, (max-width: 767px) 43vw, (max-width: 991px) 45vw, 21vw" srcset="
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67181061802a6ff9936576f6_vecteezy_necklace-with-blue-stones_48759474-p-500.avif 500w,
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67181061802a6ff9936576f6_vecteezy_necklace-with-blue-stones_48759474-p-800.avif 800w,
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67181061802a6ff9936576f6_vecteezy_necklace-with-blue-stones_48759474-p-1080.avif 1080w,
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67181061802a6ff9936576f6_vecteezy_necklace-with-blue-stones_48759474-p-1600.avif 1600w,
-                                            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67181061802a6ff9936576f6_vecteezy_necklace-with-blue-stones_48759474.avif 4000w
-                                        " class="product-thumbnail-2"/>
-                                        <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/671810862ef36e2b91cdd562_2151695044.jpg" alt="" class="show-on-hover-2"/>
-                                        <a href="/product/eternal-grace-pendant" class="link-to-details-page w-inline-block"></a>
-                                        <div data-wf-sku-conditions='{"condition":{"fields":{"default-sku:compare-at-price":{"exists":"yes","type":"CommercePrice"}}},"timezone":"Asia/Dhaka"}' class="sale-tag">On Sale</div>
-                                    </div>
-                                    <div class="w-layout-vflex product-body">
-                                        <a href="/product/eternal-grace-pendant" class="mask w-inline-block">
-                                            <div class="product-name-on-card">Eternal Grace Pendant</div>
-                                        </a>
-                                        <div class="price-button-wrapper">
-                                            <div class="w-layout-hflex product-price-block-2">
-                                                <div data-wf-sku-bindings='[{"from":"f_price_","to":"innerHTML"}]' class="card-price">$ 2,250.00 USD</div>
-                                                <div data-wf-sku-bindings='[{"from":"f_compare_at_price_7dr10dr","to":"innerHTML"}]' class="card-compare-prices">$ 2,000.00 USD</div>
-                                            </div>
-                                            <div>
-                                                <form data-node-type="commerce-add-to-cart-form" data-commerce-sku-id="671810bfda03d560337ed3e9" data-loading-text="Adding to cart..." data-commerce-product-id="671810bea368e6adb564f0c3" class="w-commerce-commerceaddtocartform product-button-wrapper">
-                                                    <div class="text-link-with-border">
-                                                        <input type="submit" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." aria-busy="false" aria-haspopup="dialog" class="w-commerce-commerceaddtocartbutton custom-add-to-card-button" value="Add to Cart"/>
-                                                        <div class="mask">
-                                                            <div class="link-border"></div>
-                                                            <div class="link-border-secodnary"></div>
-                                                        </div>
-                                                    </div>
-                                                    <a href="/product/eternal-grace-pendant" class="text-link-with-border w-inline-block">
-                                                        <div>View Details</div>
-                                                        <div class="mask">
-                                                            <div class="link-border"></div>
-                                                            <div class="link-border-secodnary"></div>
-                                                        </div>
-                                                    </a>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hot Deals Tab -->
-                <div data-w-tab="Hot Deals" class="w-tab-pane">
-                    <div class="w-dyn-list">
-                        <div role="list" class="_4-column-grid w-dyn-items">
-                            <!-- Hot deals products would go here -->
-                            <!-- Similar structure to Latest tab but with different products -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Most Selling Tab -->
-                <div data-w-tab="Most Selling" class="w-tab-pane">
-                    <div class="w-dyn-list">
-                        <div role="list" class="_4-column-grid w-dyn-items">
-                            <!-- Most sold products would go here -->
-                            <!-- Similar structure to Latest tab but with different products -->
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
+       
     </div>
-</section>
-            </div>
-        </section>
 
-     
-
-        <!-- Features Section -->
-        <section class="section">
-            <div class="container">
-             <!-- Features Section -->
-<section class="section">
-    <div class="container">
-        
-        <!-- Section Title -->
-        <div class="title-wrapper">
-            <div class="mask">
-                <h2 data-w-id="5e0dc5f6-7ac0-34d1-dd9e-efd6960d522d" class="heading">Our Features</h2>
-            </div>
-            <div class="mask">
-                <p data-w-id="5e0dc5f6-7ac0-34d1-dd9e-efd6960d522f">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-            </div>
-        </div>
-
-        <!-- Banner Products Grid (Reverse Layout) -->
-        <div class="banner-products-grid reverse">
+    <!-- Deferred Scripts -->
+    <script src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/js/webflow.d6a61a29f.js" type="text/javascript" defer></script>
+    
+    <!-- Additional optimization script -->
+    <script>
+        // Lazy load images
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = [].slice.call(document.querySelectorAll('img[data-src]'));
             
-            <!-- Product Slider -->
-            <div data-delay="4000" data-animation="slide" class="product-slider w-slider" data-autoplay="false" data-easing="ease-out-quad" style="opacity:0;transform:translate3d(-50px, null, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-5deg) skew(0, 0)" data-hide-arrows="false" data-disable-swipe="false" data-w-id="3061342e-c41c-18b4-dbcd-3bb0f5509545" data-autoplay-limit="0" data-nav-spacing="3" data-duration="800" data-infinite="false">
-                <div data-w-id="3061342e-c41c-18b4-dbcd-3bb0f5509546" style="opacity:0;transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="w-slider-mask">
-                    
-                    <!-- Slide 1 - Golden Dusk -->
-                    <div class="_33-slide w-slide">
-                        <div class="w-dyn-list">
-                            <div role="list" class="w-dyn-items">
-                                <div role="listitem" class="full-width w-dyn-item">
-                                    <div class="product-card">
-                                        <div class="product-thumbnail-wrapper">
-                                            <img data-wf-sku-bindings='[{"from":"f_main_image_4dr","to":"src"}]' loading="lazy" alt="" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180fddda747d655a46d383_ipser2007039p.avif" sizes="(max-width: 479px) 89vw, (max-width: 767px) 57vw, (max-width: 991px) 28vw, 20vw" srcset="
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180fddda747d655a46d383_ipser2007039p-p-500.avif 500w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180fddda747d655a46d383_ipser2007039p.avif 1000w
-                                            " class="product-thumbnail-2"/>
-                                            <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180cf2a83659fc1a0483a7_2149649172.avif" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 59vw, (max-width: 991px) 30vw, 21vw" srcset="
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180cf2a83659fc1a0483a7_2149649172-p-500.avif 500w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180cf2a83659fc1a0483a7_2149649172.avif 1000w
-                                            " class="show-on-hover-2"/>
-                                            <a href="/product/golden-dusk" class="link-to-details-page w-inline-block"></a>
-                                            <div data-wf-sku-conditions='{"condition":{"fields":{"default-sku:compare-at-price":{"exists":"yes","type":"CommercePrice"}}},"timezone":"Asia/Dhaka"}' class="sale-tag">On Sale</div>
-                                        </div>
-                                        <div class="w-layout-vflex product-body">
-                                            <a href="/product/golden-dusk" class="mask w-inline-block">
-                                                <div class="product-name-on-card">Golden Dusk</div>
-                                            </a>
-                                            <div class="price-button-wrapper">
-                                                <div class="w-layout-hflex product-price-block-2">
-                                                    <div data-wf-sku-bindings='[{"from":"f_price_","to":"innerHTML"}]' class="card-price">$ 2,300.00 USD</div>
-                                                    <div data-wf-sku-bindings='[{"from":"f_compare_at_price_7dr10dr","to":"innerHTML"}]' class="card-compare-prices">$ 2,000.00 USD</div>
-                                                </div>
-                                                <div>
-                                                    <form data-node-type="commerce-add-to-cart-form" data-commerce-sku-id="67180fe415b8890fc07fa2d9" data-loading-text="Adding to cart..." data-commerce-product-id="67180fe32c102ec1b0173dda" class="w-commerce-commerceaddtocartform product-button-wrapper">
-                                                        <div class="text-link-with-border">
-                                                            <input type="submit" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." aria-busy="false" aria-haspopup="dialog" class="w-commerce-commerceaddtocartbutton custom-add-to-card-button" value="Add to Cart"/>
-                                                            <div class="mask">
-                                                                <div class="link-border"></div>
-                                                                <div class="link-border-secodnary"></div>
-                                                            </div>
-                                                        </div>
-                                                        <a href="/product/golden-dusk" class="text-link-with-border w-inline-block">
-                                                            <div>View Details</div>
-                                                            <div class="mask">
-                                                                <div class="link-border"></div>
-                                                                <div class="link-border-secodnary"></div>
-                                                            </div>
-                                                        </a>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            if ('IntersectionObserver' in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove('lazy');
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
 
-                    <!-- Slide 2 - Radiant Pearl -->
-                    <div class="_33-slide w-slide">
-                        <div class="w-dyn-list">
-                            <div role="list" class="w-dyn-items">
-                                <div role="listitem" class="full-width w-dyn-item">
-                                    <div class="product-card">
-                                        <div class="product-thumbnail-wrapper">
-                                            <img data-wf-sku-bindings='[{"from":"f_main_image_4dr","to":"src"}]' loading="lazy" alt="" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180ee9b86241c42475769c_wer2112150__ke301955_4p.avif" sizes="(max-width: 479px) 89vw, (max-width: 767px) 57vw, (max-width: 991px) 28vw, 20vw" srcset="
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180ee9b86241c42475769c_wer2112150__ke301955_4p-p-500.avif 500w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180ee9b86241c42475769c_wer2112150__ke301955_4p-p-800.avif 800w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180ee9b86241c42475769c_wer2112150__ke301955_4p.avif 1700w
-                                            " class="product-thumbnail-2"/>
-                                            <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180cf2a83659fc1a0483a7_2149649172.avif" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 59vw, (max-width: 991px) 30vw, 21vw" srcset="
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180cf2a83659fc1a0483a7_2149649172-p-500.avif 500w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180cf2a83659fc1a0483a7_2149649172.avif 1000w
-                                            " class="show-on-hover-2"/>
-                                            <a href="/product/radiant-pearl" class="link-to-details-page w-inline-block"></a>
-                                            <div data-wf-sku-conditions='{"condition":{"fields":{"default-sku:compare-at-price":{"exists":"yes","type":"CommercePrice"}}},"timezone":"Asia/Dhaka"}' class="sale-tag">On Sale</div>
-                                        </div>
-                                        <div class="w-layout-vflex product-body">
-                                            <a href="/product/radiant-pearl" class="mask w-inline-block">
-                                                <div class="product-name-on-card">Radiant Pearl</div>
-                                            </a>
-                                            <div class="price-button-wrapper">
-                                                <div class="w-layout-hflex product-price-block-2">
-                                                    <div data-wf-sku-bindings='[{"from":"f_price_","to":"innerHTML"}]' class="card-price">$ 2,300.00 USD</div>
-                                                    <div data-wf-sku-bindings='[{"from":"f_compare_at_price_7dr10dr","to":"innerHTML"}]' class="card-compare-prices">$ 2,000.00 USD</div>
-                                                </div>
-                                                <div>
-                                                    <form data-node-type="commerce-add-to-cart-form" data-commerce-sku-id="67180eab0df84634934e0cfd" data-loading-text="Adding to cart..." data-commerce-product-id="67180eaaef813f4b10e8b321" class="w-commerce-commerceaddtocartform product-button-wrapper">
-                                                        <div class="text-link-with-border">
-                                                            <input type="submit" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." aria-busy="false" aria-haspopup="dialog" class="w-commerce-commerceaddtocartbutton custom-add-to-card-button" value="Add to Cart"/>
-                                                            <div class="mask">
-                                                                <div class="link-border"></div>
-                                                                <div class="link-border-secodnary"></div>
-                                                            </div>
-                                                        </div>
-                                                        <a href="/product/radiant-pearl" class="text-link-with-border w-inline-block">
-                                                            <div>View Details</div>
-                                                            <div class="mask">
-                                                                <div class="link-border"></div>
-                                                                <div class="link-border-secodnary"></div>
-                                                            </div>
-                                                        </a>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 - Luna Sparkle Hoops -->
-                    <div class="_33-slide w-slide">
-                        <div class="w-dyn-list">
-                            <div role="list" class="w-dyn-items">
-                                <div role="listitem" class="full-width w-dyn-item">
-                                    <div class="product-card">
-                                        <div class="product-thumbnail-wrapper">
-                                            <img data-wf-sku-bindings='[{"from":"f_main_image_4dr","to":"src"}]' loading="lazy" alt="" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180c45a368e6adb56123f5_pngegg%20(15).png" class="product-thumbnail-2"/>
-                                            <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180c6e30eedb3cec135faa_8120.avif" alt="" sizes="(max-width: 479px) 93vw, (max-width: 767px) 59vw, (max-width: 991px) 30vw, 21vw" srcset="
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180c6e30eedb3cec135faa_8120-p-500.avif 500w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180c6e30eedb3cec135faa_8120.avif 1000w
-                                            " class="show-on-hover-2"/>
-                                            <a href="/product/luna-sparkle-hoops" class="link-to-details-page w-inline-block"></a>
-                                            <div data-wf-sku-conditions='{"condition":{"fields":{"default-sku:compare-at-price":{"exists":"yes","type":"CommercePrice"}}},"timezone":"Asia/Dhaka"}' class="sale-tag w-condition-invisible">On Sale</div>
-                                        </div>
-                                        <div class="w-layout-vflex product-body">
-                                            <a href="/product/luna-sparkle-hoops" class="mask w-inline-block">
-                                                <div class="product-name-on-card">Luna Sparkle Hoops</div>
-                                            </a>
-                                            <div class="price-button-wrapper">
-                                                <div class="w-layout-hflex product-price-block-2">
-                                                    <div data-wf-sku-bindings='[{"from":"f_price_","to":"innerHTML"}]' class="card-price">$ 3,250.00 USD</div>
-                                                    <div data-wf-sku-bindings='[{"from":"f_compare_at_price_7dr10dr","to":"innerHTML"}]' class="card-compare-prices w-dyn-bind-empty"></div>
-                                                </div>
-                                                <div>
-                                                    <form data-node-type="commerce-add-to-cart-form" data-commerce-sku-id="67180c87464e3cebbb2b3da1" data-loading-text="Adding to cart..." data-commerce-product-id="67180c85f483344739d3786f" class="w-commerce-commerceaddtocartform product-button-wrapper">
-                                                        <div class="text-link-with-border">
-                                                            <input type="submit" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." aria-busy="false" aria-haspopup="dialog" class="w-commerce-commerceaddtocartbutton custom-add-to-card-button" value="Add to Cart"/>
-                                                            <div class="mask">
-                                                                <div class="link-border"></div>
-                                                                <div class="link-border-secodnary"></div>
-                                                            </div>
-                                                        </div>
-                                                        <a href="/product/luna-sparkle-hoops" class="text-link-with-border w-inline-block">
-                                                            <div>View Details</div>
-                                                            <div class="mask">
-                                                                <div class="link-border"></div>
-                                                                <div class="link-border-secodnary"></div>
-                                                            </div>
-                                                        </a>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Additional slides would continue here... -->
-
-                </div>
-
-                <!-- Slider Navigation Arrows -->
-                <div class="navigation-arrow-top left-arrow w-slider-arrow-left">
-                    <div class="navigation-icon-wrapper-dark">
-                        <div class="horizontal-arrow-wrapper _18px">
-                            <div class="arrow-icon _18px">chevron_left</div>
-                            <div class="arrow-icon _18px">chevron_left</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="navigation-arrow-top w-slider-arrow-right">
-                    <div class="navigation-icon-wrapper-dark">
-                        <div class="horizontal-arrow-wrapper _18px">
-                            <div class="arrow-icon _18px">chevron_right<br/></div>
-                            <div class="arrow-icon _18px">chevron_right</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hidden w-slider-nav w-slider-nav-invert"></div>
-            </div>
-
-            <!-- Side Banner -->
-            <div data-w-id="3061342e-c41c-18b4-dbcd-3bb0f55096fe" style="opacity:0;transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="product-side-banner">
-                <div class="banner-title reverse">July Offers</div>
-                <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f6a6de927107d5e50f6_2149509253.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 30vw, (max-width: 991px) 31vw, 25vw" srcset="
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f6a6de927107d5e50f6_2149509253-p-500.jpg 500w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f6a6de927107d5e50f6_2149509253-p-800.jpg 800w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f6a6de927107d5e50f6_2149509253.jpg 1000w
-                " alt="" class="full-image"/>
-            </div>
-
-        </div>
-    </div>
-</section>
-            </div>
-        </section>
-
-
-    
-
-        <!-- Product Showcase -->
-        <section class="section bg-section-overflow-hidden">
-           <!-- Product Showcase Section -->
-<section class="section bg-section-overflow-hidden">
-    
-    <!-- Background Image with Interactive Hotspots -->
-    <div class="absolute-image-50">
-        <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409ae0aa4ddf068475f2d_pexels-ardalan-hamedani-295715724-16146016.jpg" loading="lazy" sizes="(max-width: 767px) 100vw, 50vw" srcset="
-            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409ae0aa4ddf068475f2d_pexels-ardalan-hamedani-295715724-16146016-p-500.jpg 500w,
-            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409ae0aa4ddf068475f2d_pexels-ardalan-hamedani-295715724-16146016-p-800.jpg 800w,
-            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409ae0aa4ddf068475f2d_pexels-ardalan-hamedani-295715724-16146016-p-1080.jpg 1080w,
-            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409ae0aa4ddf068475f2d_pexels-ardalan-hamedani-295715724-16146016-p-1600.jpg 1600w,
-            https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409ae0aa4ddf068475f2d_pexels-ardalan-hamedani-295715724-16146016.jpg 1920w
-        " alt="Luxury jewelry showcase" class="full-image"/>
-        
-        <!-- Interactive Hotspot 1 -->
-        <div class="circle-hover">
-            <div data-w-id="ca9c9e3c-7b59-6c0c-6298-82c864316ef6" class="circle-hotspot"></div>
-            <div style="opacity:0.7;transform:translate3d(0, 0, 0) scale3d(0.3, 0.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="circle-hotspot-1-layer"></div>
-            <div style="transform:translate3d(0, 0, 0) scale3d(0.3, 0.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0.7" class="circle-hotspot-2-layer"></div>
-            <div style="opacity:0" class="first-hover-content">
-                <div class="product-name-on-card">Serenity Chain</div>
-                <p class="card-price">$ 3250 USD</p>
-            </div>
-        </div>
-
-        <!-- Interactive Hotspot 2 -->
-        <div class="circle-hover bottom">
-            <div data-w-id="9b2570b6-60ac-db71-1fd4-5fb1cd041b0f" class="circle-hotspot"></div>
-            <div style="opacity:0.7;transform:translate3d(0, 0, 0) scale3d(0.3, 0.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="circle-hotspot-1-layer"></div>
-            <div style="transform:translate3d(0, 0, 0) scale3d(0.3, 0.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0.7" class="circle-hotspot-2-layer"></div>
-            <div style="opacity:1" class="second-hover-content">
-                <div class="product-name-on-card">Radiant Pearl</div>
-                <p class="card-price">$ 2300 USD</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Product Slider Section -->
-    <div class="container float-right">
-        <div class="slider-products">
-            <div data-delay="4000" data-animation="slide" class="_50-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
-                <div class="w-slider-mask">
-                    
-                    <!-- Slide 1 - Serenity Chain -->
-                    <div data-w-id="cfc8a9e6-d9f1-f2fa-ce0b-be1ebfe3e146" class="hp-slide w-slide">
-                        <div class="w-dyn-list">
-                            <div role="list" class="w-dyn-items">
-                                <div role="listitem" class="w-dyn-item">
-                                    <div class="product-card">
-                                        <div class="product-thumbnail-wrapper">
-                                            <img data-wf-sku-bindings='[{"from":"f_main_image_4dr","to":"src"}]' loading="lazy" alt="" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718112ce2311f76fb921d69_vecteezy_ai-generated-berliant-necklace-isolated-on-transparent_35242052.avif" sizes="(max-width: 479px) 83vw, (max-width: 767px) 70vw, (max-width: 991px) 33vw, 34vw" srcset="
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718112ce2311f76fb921d69_vecteezy_ai-generated-berliant-necklace-isolated-on-transparent_35242052-p-500.avif 500w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718112ce2311f76fb921d69_vecteezy_ai-generated-berliant-necklace-isolated-on-transparent_35242052-p-800.avif 800w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718112ce2311f76fb921d69_vecteezy_ai-generated-berliant-necklace-isolated-on-transparent_35242052-p-1080.avif 1080w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718112ce2311f76fb921d69_vecteezy_ai-generated-berliant-necklace-isolated-on-transparent_35242052-p-1600.avif 1600w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718112ce2311f76fb921d69_vecteezy_ai-generated-berliant-necklace-isolated-on-transparent_35242052.avif 2662w
-                                            " class="product-thumbnail-2"/>
-                                            <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718116cebb7e97593017ade_pexels-nxtclick02-19646999.avif" alt="" sizes="(max-width: 479px) 87vw, (max-width: 767px) 75vw, (max-width: 991px) 35vw, 36vw" srcset="
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718116cebb7e97593017ade_pexels-nxtclick02-19646999-p-500.avif 500w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718116cebb7e97593017ade_pexels-nxtclick02-19646999-p-800.avif 800w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718116cebb7e97593017ade_pexels-nxtclick02-19646999-p-1080.avif 1080w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/6718116cebb7e97593017ade_pexels-nxtclick02-19646999.avif 1920w
-                                            " class="show-on-hover-2"/>
-                                            <a href="/product/serenity-chain" class="link-to-details-page w-inline-block"></a>
-                                            <div data-wf-sku-conditions='{"condition":{"fields":{"default-sku:compare-at-price":{"exists":"yes","type":"CommercePrice"}}},"timezone":"Asia/Dhaka"}' class="sale-tag">On Sale</div>
-                                        </div>
-                                        <div class="w-layout-vflex product-body">
-                                            <a href="/product/serenity-chain" class="mask w-inline-block">
-                                                <div class="product-name-on-card">Serenity Chain</div>
-                                            </a>
-                                            <div class="price-button-wrapper">
-                                                <div class="w-layout-hflex product-price-block-2">
-                                                    <div data-wf-sku-bindings='[{"from":"f_price_","to":"innerHTML"}]' class="card-price">$ 3,250.00 USD</div>
-                                                    <div data-wf-sku-bindings='[{"from":"f_compare_at_price_7dr10dr","to":"innerHTML"}]' class="card-compare-prices">$ 2,000.00 USD</div>
-                                                </div>
-                                                <div>
-                                                    <form data-node-type="commerce-add-to-cart-form" data-commerce-sku-id="6718114898d64f1e0d849937" data-loading-text="Adding to cart..." data-commerce-product-id="67181146f8140189dec38834" class="w-commerce-commerceaddtocartform product-button-wrapper">
-                                                        <div class="text-link-with-border">
-                                                            <input type="submit" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." aria-busy="false" aria-haspopup="dialog" class="w-commerce-commerceaddtocartbutton custom-add-to-card-button" value="Add to Cart"/>
-                                                            <div class="mask">
-                                                                <div class="link-border"></div>
-                                                                <div class="link-border-secodnary"></div>
-                                                            </div>
-                                                        </div>
-                                                        <a href="/product/serenity-chain" class="text-link-with-border w-inline-block">
-                                                            <div>View Details</div>
-                                                            <div class="mask">
-                                                                <div class="link-border"></div>
-                                                                <div class="link-border-secodnary"></div>
-                                                            </div>
-                                                        </a>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2 - Radiant Pearl -->
-                    <div data-w-id="11bbbcb8-fa51-09e4-38c4-562db1b520ee" class="hp-slide w-slide">
-                        <div class="w-dyn-list">
-                            <div role="list" class="w-dyn-items">
-                                <div role="listitem" class="w-dyn-item">
-                                    <div class="product-card">
-                                        <div class="product-thumbnail-wrapper">
-                                            <img data-wf-sku-bindings='[{"from":"f_main_image_4dr","to":"src"}]' loading="lazy" alt="" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180ee9b86241c42475769c_wer2112150__ke301955_4p.avif" sizes="(max-width: 479px) 83vw, (max-width: 767px) 70vw, (max-width: 991px) 33vw, 34vw" srcset="
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180ee9b86241c42475769c_wer2112150__ke301955_4p-p-500.avif 500w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180ee9b86241c42475769c_wer2112150__ke301955_4p-p-800.avif 800w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180ee9b86241c42475769c_wer2112150__ke301955_4p.avif 1700w
-                                            " class="product-thumbnail-2"/>
-                                            <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180cf2a83659fc1a0483a7_2149649172.avif" alt="" sizes="(max-width: 479px) 87vw, (max-width: 767px) 75vw, (max-width: 991px) 35vw, 36vw" srcset="
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180cf2a83659fc1a0483a7_2149649172-p-500.avif 500w,
-                                                https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616bd/67180cf2a83659fc1a0483a7_2149649172.avif 1000w
-                                            " class="show-on-hover-2"/>
-                                            <a href="/product/radiant-pearl" class="link-to-details-page w-inline-block"></a>
-                                            <div data-wf-sku-conditions='{"condition":{"fields":{"default-sku:compare-at-price":{"exists":"yes","type":"CommercePrice"}}},"timezone":"Asia/Dhaka"}' class="sale-tag">On Sale</div>
-                                        </div>
-                                        <div class="w-layout-vflex product-body">
-                                            <a href="/product/radiant-pearl" class="mask w-inline-block">
-                                                <div class="product-name-on-card">Radiant Pearl</div>
-                                            </a>
-                                            <div class="price-button-wrapper">
-                                                <div class="w-layout-hflex product-price-block-2">
-                                                    <div data-wf-sku-bindings='[{"from":"f_price_","to":"innerHTML"}]' class="card-price">$ 2,300.00 USD</div>
-                                                    <div data-wf-sku-bindings='[{"from":"f_compare_at_price_7dr10dr","to":"innerHTML"}]' class="card-compare-prices">$ 2,000.00 USD</div>
-                                                </div>
-                                                <div>
-                                                    <form data-node-type="commerce-add-to-cart-form" data-commerce-sku-id="67180eab0df84634934e0cfd" data-loading-text="Adding to cart..." data-commerce-product-id="67180eaaef813f4b10e8b321" class="w-commerce-commerceaddtocartform product-button-wrapper">
-                                                        <div class="text-link-with-border">
-                                                            <input type="submit" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." aria-busy="false" aria-haspopup="dialog" class="w-commerce-commerceaddtocartbutton custom-add-to-card-button" value="Add to Cart"/>
-                                                            <div class="mask">
-                                                                <div class="link-border"></div>
-                                                                <div class="link-border-secodnary"></div>
-                                                            </div>
-                                                        </div>
-                                                        <a href="/product/radiant-pearl" class="text-link-with-border w-inline-block">
-                                                            <div>View Details</div>
-                                                            <div class="mask">
-                                                                <div class="link-border"></div>
-                                                                <div class="link-border-secodnary"></div>
-                                                            </div>
-                                                        </a>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Slider Navigation -->
-                <div class="nav-arrow-wrapper w-slider-arrow-left">
-                    <div class="navigation-icon-wrapper-dark">
-                        <div class="horizontal-arrow-wrapper _18px">
-                            <div class="arrow-icon _18px">chevron_left</div>
-                            <div class="arrow-icon _18px">chevron_left</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="nav-arrow-wrapper w-slider-arrow-right">
-                    <div class="navigation-icon-wrapper-dark">
-                        <div class="horizontal-arrow-wrapper _18px">
-                            <div class="arrow-icon _18px">chevron_right<br/></div>
-                            <div class="arrow-icon _18px">chevron_right</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hidden w-slider-nav w-round w-num"></div>
-            </div>
-        </div>
-    </div>
-</section>
-        </section>
-
-     
-
-        
-
-
-        <!-- Services Section -->
-        <section>
-            <div class="container">
-           <!-- Services Section -->
-<section>
-    <div class="container">
-        <div data-w-id="fd076ad6-ad67-0e57-1690-2369d8ae2d9b" style="opacity:0;transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="service-grid">
-            
-            <!-- Free Delivery Service -->
-            <div class="service-card">
-                <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140cbc0aa4ddf068499bbd_delivery-truck.avif" alt="Free delivery truck icon" class="image-45px"/>
-                <div class="w-layout-vflex _3px-gap">
-                    <div class="service-title">Free Delivery</div>
-                    <p class="_14px-paragraph">Free shipping on all orders</p>
-                </div>
-            </div>
-
-            <!-- Online Support Service -->
-            <div class="service-card">
-                <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140d93abd0ae7169596fe5_customer-care.avif" alt="24/7 customer support icon" class="image-45px"/>
-                <div class="w-layout-vflex _3px-gap">
-                    <div class="service-title">ONLINE SUPPORT</div>
-                    <p class="_14px-paragraph">24/7 customer support available</p>
-                </div>
-            </div>
-
-            <!-- Money Return Service -->
-            <div class="service-card">
-                <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140d407774278f26dea730_verified.avif" alt="Money back guarantee icon" class="image-45px"/>
-                <div class="w-layout-vflex _3px-gap">
-                    <div class="service-title">MONEY RETURN</div>
-                    <p class="_14px-paragraph">30-day money back guarantee</p>
-                </div>
-            </div>
-
-            <!-- Secure Payment Service -->
-            <div class="service-card">
-                <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140dc98a096018dd5494f0_credit-card%20(1).png" alt="Secure payment icon" class="image-45px"/>
-                <div class="w-layout-vflex _3px-gap">
-                    <div class="service-title">SECURE PAYMENT</div>
-                    <p class="_14px-paragraph">100% secure payment processing</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-<section>
-    <div class="container">
-        <div data-w-id="fd076ad6-ad67-0e57-1690-2369d8ae2d9b" style="opacity:0;transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="service-grid">
-            
-            <!-- Free Delivery Service -->
-            <div class="service-card">
-                <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140cbc0aa4ddf068499bbd_delivery-truck.avif" alt="Delivery truck icon" class="image-45px"/>
-                <div class="w-layout-vflex _3px-gap">
-                    <div>Free Delivery</div>
-                    <p class="_14px-paragraph">Free shipping on all order</p>
-                </div>
-            </div>
-
-            <!-- Online Support Service -->
-            <div class="service-card">
-                <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140d93abd0ae7169596fe5_customer-care.avif" alt="Customer care icon" class="image-45px"/>
-                <div class="w-layout-vflex _3px-gap">
-                    <div>ONLINE SUPPORT</div>
-                    <p class="_14px-paragraph">Support online 24 hours a day</p>
-                </div>
-            </div>
-
-            <!-- Money Return Service -->
-            <div class="service-card">
-                <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140d407774278f26dea730_verified.avif" alt="Verified icon" class="image-45px"/>
-                <div class="w-layout-vflex _3px-gap">
-                    <div>MONEY RETURN</div>
-                    <p class="_14px-paragraph">Support online 24 hours a day</p>
-                </div>
-            </div>
-
-            <!-- Secure Payment Service -->
-            <div class="service-card">
-                <img loading="lazy" src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140dc98a096018dd5494f0_credit-card%20(1).png" alt="Credit card icon" class="image-45px"/>
-                <div class="w-layout-vflex _3px-gap">
-                    <div>SECURE PAYMENT</div>
-                    <p class="_14px-paragraph">Support online 24 hours a day</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-            </div>
-        </section>
-         <!-- Features Section -->
-        <section class="section">
-            <div class="container">
-                <!-- Features content -->
-            </div>
-        </section>
-
-        <!-- Collections Section -->
-        <section class="section dark-section">
-            <div class="container">
-                <!-- Collections content -->
-            </div>
-        </section>
- <!-- Product Showcase -->
-        <section class="section bg-section-overflow-hidden">
-            <!-- Product showcase content -->
-        </section>
-
-        <!-- Before & After Section -->
-        <section class="section">
-            <div class="container">
-                <!-- Before & after content -->
-            </div>
-        </section>
-        <!-- Footer -->
-        <footer id="footer" class="footer">
-          <!-- Footer -->
-<footer id="footer" class="footer">
-    
-    <!-- Infinity Carousel Background -->
-    <div class="infinity-carousel-container-2deg-rotate">
-        <div data-w-id="c3bdb274-81c1-056b-23ab-4782eaba35a1" class="infinity-slider-carousel">
-            <div class="infinity-item-container">
-                <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/6714119ab8ff19aa6832025e_esther-tuttle-0U-dXovBS2E-unsplash.jpg" loading="lazy" sizes="100vw" srcset="
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/6714119ab8ff19aa6832025e_esther-tuttle-0U-dXovBS2E-unsplash-p-500.jpg 500w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/6714119ab8ff19aa6832025e_esther-tuttle-0U-dXovBS2E-unsplash-p-800.jpg 800w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/6714119ab8ff19aa6832025e_esther-tuttle-0U-dXovBS2E-unsplash-p-1080.jpg 1080w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/6714119ab8ff19aa6832025e_esther-tuttle-0U-dXovBS2E-unsplash-p-1600.jpg 1600w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/6714119ab8ff19aa6832025e_esther-tuttle-0U-dXovBS2E-unsplash.jpg 1920w
-                " alt="" class="infinity-image"/>
-                <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671410e7a5b3f6417b48afeb_2151695044.jpg" loading="lazy" sizes="100vw" srcset="
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671410e7a5b3f6417b48afeb_2151695044-p-500.jpg 500w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671410e7a5b3f6417b48afeb_2151695044-p-800.jpg 800w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671410e7a5b3f6417b48afeb_2151695044-p-1080.jpg 1080w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671410e7a5b3f6417b48afeb_2151695044.jpg 1500w
-                " alt="" class="infinity-image"/>
-                <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671410d19ba04f04d7257fe9_2151695004.jpg" loading="lazy" sizes="100vw" srcset="
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671410d19ba04f04d7257fe9_2151695004-p-500.jpg 500w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671410d19ba04f04d7257fe9_2151695004-p-800.jpg 800w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671410d19ba04f04d7257fe9_2151695004-p-1080.jpg 1080w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671410d19ba04f04d7257fe9_2151695004.jpg 1500w
-                " alt="" class="infinity-image"/>
-                <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f6ab8ff19aa6830518d_17957.jpg" loading="lazy" sizes="100vw" srcset="
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f6ab8ff19aa6830518d_17957-p-500.jpg 500w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f6ab8ff19aa6830518d_17957-p-800.jpg 800w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f6ab8ff19aa6830518d_17957-p-1080.jpg 1080w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f6ab8ff19aa6830518d_17957.jpg 1500w
-                " alt="" class="infinity-image"/>
-                <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f6a87fbaf9a32f8c528_2149509252.jpg" loading="lazy" sizes="100vw" srcset="
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f6a87fbaf9a32f8c528_2149509252-p-500.jpg 500w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f6a87fbaf9a32f8c528_2149509252-p-800.jpg 800w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f6a87fbaf9a32f8c528_2149509252.jpg 1000w
-                " alt="" class="infinity-image"/>
-            </div>
-            <div class="infinity-item-container inline">
-                <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409aed93a969d690312f8_pexels-kagiso-mokalake-34808293-7093174.jpg" loading="lazy" sizes="100vw" srcset="
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409aed93a969d690312f8_pexels-kagiso-mokalake-34808293-7093174-p-500.jpg 500w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409aed93a969d690312f8_pexels-kagiso-mokalake-34808293-7093174-p-800.jpg 800w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409aed93a969d690312f8_pexels-kagiso-mokalake-34808293-7093174-p-1080.jpg 1080w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409aed93a969d690312f8_pexels-kagiso-mokalake-34808293-7093174-p-1600.jpg 1600w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409aed93a969d690312f8_pexels-kagiso-mokalake-34808293-7093174.jpg 1920w
-                " alt="" class="infinity-image"/>
-                <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/6714198b22ccd9c2f9b747d7_morgan-alley-kXA0kGuc5U8-unsplash.jpg" loading="lazy" sizes="100vw" srcset="
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/6714198b22ccd9c2f9b747d7_morgan-alley-kXA0kGuc5U8-unsplash-p-500.jpg 500w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/6714198b22ccd9c2f9b747d7_morgan-alley-kXA0kGuc5U8-unsplash-p-800.jpg 800w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/6714198b22ccd9c2f9b747d7_morgan-alley-kXA0kGuc5U8-unsplash-p-1080.jpg 1080w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/6714198b22ccd9c2f9b747d7_morgan-alley-kXA0kGuc5U8-unsplash-p-1600.jpg 1600w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/6714198b22ccd9c2f9b747d7_morgan-alley-kXA0kGuc5U8-unsplash.jpg 1920w
-                " alt="" class="infinity-image"/>
-                <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f9122ccd9c2f9b0b797_2151695047.jpg" loading="lazy" sizes="100vw" srcset="
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f9122ccd9c2f9b0b797_2151695047-p-500.jpg 500w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f9122ccd9c2f9b0b797_2151695047-p-800.jpg 800w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f9122ccd9c2f9b0b797_2151695047-p-1080.jpg 1080w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f9122ccd9c2f9b0b797_2151695047.jpg 1500w
-                " alt="" class="infinity-image"/>
-                <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f4abff236c60cd28c03_eileen-pan-RQ50g39mh2o-unsplash.jpg" loading="lazy" sizes="100vw" srcset="
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f4abff236c60cd28c03_eileen-pan-RQ50g39mh2o-unsplash-p-500.jpg 500w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f4abff236c60cd28c03_eileen-pan-RQ50g39mh2o-unsplash-p-800.jpg 800w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f4abff236c60cd28c03_eileen-pan-RQ50g39mh2o-unsplash-p-1080.jpg 1080w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f4abff236c60cd28c03_eileen-pan-RQ50g39mh2o-unsplash-p-1600.jpg 1600w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f4abff236c60cd28c03_eileen-pan-RQ50g39mh2o-unsplash-p-2000.jpg 2000w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67140f4abff236c60cd28c03_eileen-pan-RQ50g39mh2o-unsplash.jpg 2400w
-                " alt="" class="infinity-image"/>
-                <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409ae0aa4ddf068475f2d_pexels-ardalan-hamedani-295715724-16146016.jpg" loading="lazy" sizes="100vw" srcset="
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409ae0aa4ddf068475f2d_pexels-ardalan-hamedani-295715724-16146016-p-500.jpg 500w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409ae0aa4ddf068475f2d_pexels-ardalan-hamedani-295715724-16146016-p-800.jpg 800w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409ae0aa4ddf068475f2d_pexels-ardalan-hamedani-295715724-16146016-p-1080.jpg 1080w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409ae0aa4ddf068475f2d_pexels-ardalan-hamedani-295715724-16146016-p-1600.jpg 1600w,
-                    https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/671409ae0aa4ddf068475f2d_pexels-ardalan-hamedani-295715724-16146016.jpg 1920w
-                " alt="" class="infinity-image"/>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Footer Content -->
-    <div class="footer-main">
-        <div class="container">
-            <div class="footer-wrapper">
-                
-                <!-- Left Footer Section -->
-                <div class="footer-left-bar">
-                    <a href="#" class="navbar-logo-wrapper w-nav-brand">
-                        <img src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/67149a70d5982a9290e57934_Icebyflexy.avif" loading="lazy" width="70" alt="Icebyflexy Logo" class="site-logo"/>
-                    </a>
-                    <div class="_24px-text">Get In Touch</div>
-                </div>
-
-                <!-- Right Footer Section -->
-                <div class="footer-right-bar">
-                    
-                    <!-- Contact Information Blocks -->
-                    <div class="w-layout-vflex footer-info-blocks-wrapper">
-                        
-                        <!-- Email Contact -->
-                        <div class="footer-info-blocks">
-                            <p class="_14px-text-white">Mail Us</p>
-                            <p class="_18px-text-white">Icebyflexy@nexoy.com</p>
-                        </div>
-
-                        <!-- Phone Contact -->
-                        <div class="footer-info-blocks no-border-on-landscape">
-                            <p class="_14px-text-white">Call Us</p>
-                            <p class="_18px-text-white">(415) 555‑0XX2</p>
-                        </div>
-
-                        <!-- Address -->
-                        <div class="footer-info-blocks no-border-on-tab">
-                            <p class="_14px-text-white">Address</p>
-                            <p class="_18px-text-white">North Carolina, USA</p>
-                        </div>
-
-                        <!-- Social Media -->
-                        <div class="footer-info-blocks last-block">
-                            <p class="_14px-text-white">Follow US</p>
-                            <div class="social-share-icon-container">
-                                <a href="https://www.facebook.com" target="_blank" class="footer-social-icon"></a>
-                                <a href="https://www.instagram.com" target="_blank" class="footer-social-icon"></a>
-                                <a href="https://twitter.com" target="_blank" class="footer-social-icon"></a>
-                                <a href="https://www.instagram.com" target="_blank" class="footer-social-icon"></a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Copyright Section -->
-                    <div class="footer-container">
-                        <div class="footer-copyright">
-                            Copyright © Icebyflexy | Designed by Nexoy |
-                            <a href="https://webflow.com/" class="footer-copyright">Powered by Webflow.com</a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-        <div class="footer-bg"></div>
-    </div>
-
-    <!-- Cursor Effects -->
-    <div class="cursor-mouse-wrapper">
-        <div class="main-cursor">
-            <div class="cursor-mouse-pointer">
-                <div class="side-parts"></div>
-                <div class="cursor-mouse"></div>
-                <div class="side-parts"></div>
-            </div>
-            <div class="cursor-circle"></div>
-        </div>
-        <div class="main-cursor horizontal">
-            <div class="arrow-part left"></div>
-            <div class="arrow-part right"></div>
-            <div class="main-part"></div>
-        </div>
-    </div>
-
-</footer>
-        </footer>
-
-    </div>
-
-    <!-- Scripts -->
-    
-    <script src="https://cdn.prod.website-files.com/670f7de6dec5c0c82ae616e4/js/webflow.d6a61a29f.js" type="text/javascript"></script>
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
